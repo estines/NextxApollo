@@ -1,0 +1,51 @@
+{
+  "name": "next-apollo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon server.js --exec babel-node --presets @babel/preset-env --watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-boost": "^0.1.15",
+    "express": "^4.16.3",
+    "graphql-tag": "^2.9.2",
+    "next": "^6.1.1",
+    "react": "^16.4.2",
+    "react-apollo": "^2.1.11",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/node": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "nodemon": "^1.18.3"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel",
+          [
+            "@babel/env",
+            {
+              "targets": {
+                "node": "8"
+              }
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
