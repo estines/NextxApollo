@@ -1,7 +1,7 @@
 module.exports =
 __NEXT_REGISTER_PAGE('/_error', function() {
           var comp =
-      webpackJsonp([1],{
+      webpackJsonp([2],{
 
 /***/ "./node_modules/http-status/lib/index.js":
 /***/ (function(module, exports) {
