@@ -1,8 +1,9 @@
 import next from 'next'
 import express from 'express'
+import bodyParser from 'body-parser'
 import settings from './settings'
-import { ApolloServer } from 'apollo-server-express'
-import GraphQLSchema from './server'
+import { ApolloServer, gr } from 'apollo-server-express'
+import { typeDefs, resolvers } from './server'
 import cors from 'cors'
 
 const dev = process.env.NODE_ENV !== 'prod';
@@ -18,11 +19,15 @@ const corsMiddleware = cors({
 
 nextApp.prepare().then(() => {
     const app = express()
-    const server = new ApolloServer(GraphQLSchema)
+    const server = new ApolloServer({
+        typeDefs,
+        resolvers,
+    })
 
-    server.applyMiddleware({ app })
+    server.applyMiddleware({ app, path: '/api' })
 
     app.use(corsMiddleware)
+    app.use(bodyParser.json())
     app.options(corsMiddleware)
 
     app.get('*', (req, res) => {
