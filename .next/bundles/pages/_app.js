@@ -26,7 +26,7 @@ function create(initialState) {
     ssrMode: !process.browser,
     // Disables forceFetch on the server (so queries are only run once)
     link: new __WEBPACK_IMPORTED_MODULE_0_apollo_boost__["b" /* HttpLink */]({
-      uri: 'https://api.graph.cool/simple/v1/cixmkt2ul01q00122mksg82pn',
+      uri: 'http://localhost:3000/graphql',
       // Server URL (must be absolute)
       credentials: 'same-origin' // Additional fetch() options like `credentials` or `headers`
 
@@ -67,7 +67,7 @@ function initApollo(initialState) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo__ = __webpack_require__("./node_modules/react-apollo/react-apollo.browser.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_apollo__);
 
-var _jsxFileName = "/Users/nopicts/Workspace/next-apollo/lib/withApolloClient.js";
+var _jsxFileName = "F:\\Workspace\\NextxApollo\\lib\\withApolloClient.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -13765,7 +13765,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lib_withApolloClient__ = __webpack_require__("./lib/withApolloClient.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_apollo__ = __webpack_require__("./node_modules/react-apollo/react-apollo.browser.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_apollo__);
-var _jsxFileName = "/Users/nopicts/Workspace/next-apollo/pages/_app.js";
+var _jsxFileName = "F:\\Workspace\\NextxApollo\\pages\\_app.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 

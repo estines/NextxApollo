@@ -2,7 +2,7 @@ import next from 'next'
 import express from 'express'
 import settings from './settings'
 import { ApolloServer } from 'apollo-server-express'
-import GraphQLSchema from './graphql'
+import GraphQLSchema from './server'
 import cors from 'cors'
 
 const dev = process.env.NODE_ENV !== 'prod';
