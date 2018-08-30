@@ -7,6 +7,9 @@
     "dev": "NODE_ENV=development nodemon app.js --exec babel-node --presets @babel/preset-env --watch app.js",
     "dev:window": "nodemon app.js --exec babel-node --presets @babel/preset-env --watch app.js",
     "prod": "NODE_ENV=production nodemon app.js --exec babel-node --presets @babel/preset-env --watch app.js",
+    "start": "next start",
+    "build": "next build",
+    "export": "next export",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

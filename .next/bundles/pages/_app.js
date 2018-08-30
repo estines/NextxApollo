@@ -26,7 +26,7 @@ function create(initialState) {
     ssrMode: !process.browser,
     // Disables forceFetch on the server (so queries are only run once)
     link: new __WEBPACK_IMPORTED_MODULE_0_apollo_boost__["b" /* HttpLink */]({
-      uri: 'http://localhost:3000/graphql',
+      uri: 'http://localhost:3000/api',
       // Server URL (must be absolute)
       credentials: 'same-origin' // Additional fetch() options like `credentials` or `headers`
 
@@ -164,7 +164,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
                   // Prevent Apollo Client GraphQL errors from crashing SSR.
                   // Handle them in components via the data.error prop:
                   // https://www.apollographql.com/docs/react/api/react-apollo.html#graphql-query-data-error
-                  console.error('Error while running `getDataFromTree`', _context.t0);
+                  console.error('Error while running `getDataFromTree`', err);
 
                 case 16:
                   // getDataFromTree does not call componentWillUnmount

@@ -63,7 +63,6 @@ describe ('Test post', function() {
 
     const result = await graphql(schema, query, rootValue, context);
 		const data = result.data.posts[0];
-    // console.log('Query posts result: ', JSON.stringify(result));
 
     expect(typeof data).toBe('object');
     expect(data.author).toBe(mock.author);
