@@ -30,28 +30,8 @@
     "@babel/core": "^7.0.0-beta.44",
     "@babel/node": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",
-    "nodemon": "^1.18.3"
-  },
-  "babel": {
-    "env": {
-      "development": {
-        "presets": [
-          "next/babel"
-        ]
-      },
-      "production": {
-        "presets": [
-          "next/babel",
-          [
-            "@babel/env",
-            {
-              "targets": {
-                "node": "8"
-              }
-            }
-          ]
-        ]
-      }
-    }
+    "next-awesome-typescript": "^0.3.2",
+    "nodemon": "^1.18.3",
+    "typescript": "^3.0.3"
   }
 }
