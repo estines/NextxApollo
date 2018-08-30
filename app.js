@@ -2,9 +2,13 @@ import next from 'next'
 import express from 'express'
 import bodyParser from 'body-parser'
 import settings from './settings'
-import { ApolloServer, gr } from 'apollo-server-express'
-import { typeDefs, resolvers } from './server'
+import { ApolloServer, mergeSchemas } from 'apollo-server-express'
+import schemas from './server/schemas'
+import resolvers from './server/resolvers'
 import cors from 'cors'
+import { userController } from './server/user/db/user.controller'
+import './server/common/pubsub'
+import './server/common/db'
 
 const dev = process.env.NODE_ENV !== 'prod';
 
@@ -17,11 +21,26 @@ const corsMiddleware = cors({
     preflightContinue: false
 })
 
+const schema = mergeSchemas({ schemas, resolvers })
+
 nextApp.prepare().then(() => {
     const app = express()
     const server = new ApolloServer({
-        typeDefs,
-        resolvers,
+        schema,
+        context: async ({ req }) => {
+            if (!req || !req.headers) {
+                return;
+            }
+
+            const token = req.headers.authorization || "";
+            const checkToken = await userController.verifyToken(token);
+
+            if (!checkToken.hasOwnProperty("authorized")) {
+                return { user: checkToken, authorized: true };
+            }
+            return checkToken;
+        },
+        tracing: true
     })
 
     server.applyMiddleware({ app, path: '/api' })
