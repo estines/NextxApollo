@@ -33,6 +33,7 @@ module.exports = {
                 ]
             }
         )
+        
         return config
     }
 }

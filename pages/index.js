@@ -2,6 +2,7 @@ import App from '../components/App'
 import Header from '../components/Header'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+// import stylesheet from '../styles/index.scss'
 
 const query = gql`
     {
@@ -24,9 +25,14 @@ const HelloResult = () => (
 )
 
 export default () => (
-    <App>
-        <Header />
-        <h1>Landing Page</h1>
-        <HelloResult />
-    </App>
+    <React.Fragment>
+        {/* import styles not working if not call tag below
+            <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> 
+        */}
+        <App>
+            <Header />
+            <h1>Landing Page</h1>
+            <HelloResult />
+        </App>
+    </React.Fragment>
 )
