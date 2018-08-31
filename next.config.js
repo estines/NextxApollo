@@ -3,6 +3,7 @@ const glob = require('glob')
 
 module.exports = {
     webpack(config, options) {
+
         config.module.rules.push(
             {
                 test: /\.(css|scss)/,

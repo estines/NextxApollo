@@ -5,7 +5,7 @@ const userResolver = {
 	Query: {
 		users(root, args, context) {
 			// check authentication
-			// authenticate(context);
+			authenticate(context);
 			return userController.users(root, args.user);
 		}
 	},

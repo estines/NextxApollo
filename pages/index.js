@@ -1,12 +1,16 @@
-import App from '../components/App'
-import Header from '../components/Header'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+import styled from 'styled-components'
+import Header from '../components/Header'
 
 const query = gql`
     {
         hello
     }
+`
+
+const Divs = styled.div`
+    width: 100%;
 `
 
 const HelloResult = () => (
@@ -15,9 +19,9 @@ const HelloResult = () => (
             if (loading) return 'loading...'
             if (error) return console.log(error)
             return (
-                <div>
+                <Divs>
                     hi response: {data.hello}
-                </div>
+                </Divs>
             )
         }}
     </Query>
@@ -25,9 +29,10 @@ const HelloResult = () => (
 
 // import styles not working if not call this tag: <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> 
 export default () => (
-    <App>
-        <Header />
-        <h1>Landing Page</h1>
-        <HelloResult />
-    </App>
+    <Header>
+        < React.Fragment >
+            <h1>Landing Page</h1>
+            <HelloResult />
+        </React.Fragment >
+    </Header>
 )
